@@ -36,7 +36,7 @@ class parser {
      */
     public function set_source_file($relativePathToFile)
     {
-        if($this->check_file_exists($relativePathToFile)){
+        if($this->check_file_exists()){
             $this->relativePathToFile = $relativePathToFile;
         }
         else{
@@ -61,11 +61,11 @@ class parser {
  
     /*
      * Check to see if the file exists
-     * @param $relativePathToFile : relative path to file
+     * @param none
      * @return : TRUE if file exists
      * @return : FALSE if file does NOT exist
      */
-    protected function check_file_exists($relativePathToFile)
+    protected function check_file_exists()
     {
         if(!file_exists($this->relativePathToFile))
         {
@@ -84,7 +84,7 @@ class parser {
     protected function process_source_file()
     {
         //check to see if file exists
-        $this->check_file_exists($this->relativePathToFile);
+        $this->check_file_exists();
         
         try {
             $rows_array = file($this->relativePathToFile);
