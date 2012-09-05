@@ -21,10 +21,29 @@ class ParserTest extends PHPUnit_Framework_TestCase
      */
     function test_set_parsed_data()
     {
+        $path = '../data/w_data.dat'; //this is uselsess here
+        $some_data = array(array('one'),array('two'));
+        $myParser = new parser($path);
+        
+        $actual = $myPaser->set_parsed_data($some_data);
+        
+        $expected = NULL;
+        
+        $this->assertEquals($expected, $actual); //NULL == NULL?
     }
     
-    function tet_get_parsed_data()
+    function test_get_parsed_data()
     {
+        $path = '../data/w_data.dat'; //this is uselsess here
+        $some_data = array(array('one'),array('two'));
+        $myParser = new parser($path);
+        
+        $myPaser->set_parsed_data($some_data);
+        
+        $expected = NULL;
+        $actual = $myParser->get_parsed_data();
+        
+        $this->assertEquals($expected, $actual); //NULL == NULL?
     }
     
     
@@ -40,8 +59,6 @@ class ParserTest extends PHPUnit_Framework_TestCase
         $actual = $myParser->get_source_file();
         
         $expected = $path;
-        echo "\n expected = $expected";
-        echo "\n actual = $actual";
         
         $this->assertEquals($expected, $actual);
         
