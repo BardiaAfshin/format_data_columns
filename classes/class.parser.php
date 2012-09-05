@@ -117,7 +117,7 @@ class parser {
             $i++;
         }
         
-        $this->set_parsed_data($this->parsed_data);
+        $this->set_parsed_data($final_array);
         return $final_array;
     }
     
