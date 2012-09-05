@@ -36,7 +36,7 @@ class parser {
      */
     public function set_source_file($relativePathToFile)
     {
-        if(check_file_exists($relativePathToFile)){
+        if($this->check_file_exists($relativePathToFile)){
             $this->relativePathToFile = $relativePathToFile;
         }
         else{
