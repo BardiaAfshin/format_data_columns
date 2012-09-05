@@ -28,13 +28,13 @@ class ParserTest extends PHPUnit_Framework_TestCase
      */
     function testClassInitialize()
     {
-        $path = './data/w_data.dat';
+        $path = '../data/w_data.dat';
         $myParser = new parser($path);
-        $response = $myParser->get_source_file();
+        $actual = $myParser->get_source_file();
         
         $expected = $path;
         
-        $this->assertEquals($response, $expected);
+        $this->assertEquals($expected, $actual);
         
     }
 
