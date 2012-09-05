@@ -56,6 +56,7 @@ class parser {
      */
     public function get_source_file()
     {
+        echo "\n get source file = ".$this->relativePathToFile;
         return $this->relativePathToFile;
     }
     
