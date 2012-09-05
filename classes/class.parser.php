@@ -9,7 +9,7 @@
  * 
  * ToDo:
  * 1. Abstract class parser into interface
- * 2. Create subclass for parsing based on abstracted interface
+ * 2. Create extended class for parsing based on abstracted interface
  * 3. Extend requirements to make use of tab delmited, comma delimited,etc
  */
 class parser {
@@ -17,42 +17,62 @@ class parser {
     /*
      * relative path to file we are importing
      */
-    private $relativePathToFile = '';
+    private $relativePathToFile = NULL;
     
     /*
      * @param relativePathToFile : the relative path to file
-     * @return : none
+     * @return : 2 dimesnioal array if object initialzed with success and file exists
+     * @return : FALSE if object not initalized and file doesn't exist
      */
     function __construct($relativePathToFile)
     {
-        $this->relativePathToFile = $relativePathToFile;
+        return $this->set_source_file($relativePathToFile);
     }
     
     /*
      * @param relativePathToFile : relative path to file
-     * @return : TRUE for successfully identifying file
-     * @return : FALSE for not finding file
+     * @return : TRUE on success
+     * @return : FALSE on failure
      */
     public function set_source_file($relativePathToFile)
     {
-    
+        if(check_file_exists($relativePathToFile)){
+            $this->relativePathToFile = $relativePathToFile;
+        }
+        else{
+            return FALSE;
+        }
+        
+        return $this->process_source_file($this->relativePathToFile);
+        }
     }
     
     /*
      * @param relativePathToFile : relative path to file
      * @return relativePathToFile : return path current file
      */
-    public function get_source_file($relativePathToFile)
+    public function get_source_file()
     {
-    
+        return $this->relativePathToFile;
     }
     
-    /* @param : none
-     * @return : full path to set relative file 
+
+ 
+    /*
+     * Check to see if the file exists
+     * @param $relativePathToFile : relative path to file
+     * @return : TRUE if file exists
+     * @return : FALSE if file does NOT exist
      */
-    private function get_source_file()
+    protected function check_file_exists($relativePathToFile)
     {
-        
+        if(!file_exists($this->relativePathToFile))
+        {
+            return FALSE;
+        }
+        else{
+            return TRUE;
+        }
     }
     
     /*
@@ -62,10 +82,9 @@ class parser {
      */
     protected function process_source_file()
     {
-        if(!file_exists($this->relativePathToFile))
-        {
-            return FALSE;
-        }
+        //check to see if file exists
+        $this->check_file_exists($this->relativePathToFile);
+        
         try {
             $rows_array = file($this->relativePathToFile);
         } catch (Exception $e) {
@@ -90,4 +109,3 @@ class parser {
     }
     
 }
-?>
