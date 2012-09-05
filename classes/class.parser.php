@@ -1,14 +1,16 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of class
+ * This class will parse comma delimited files into two dimensional array
+ * note: this will replace double space with single space
  *
  * @author Bardia Afshin
+ * 
+ * ToDo:
+ * 1. Abstract class parser into interface
+ * 2. Create subclass for parsing based on abstracted interface
+ * 3. Extend requirements to make use of tab delmited, comma delimited,etc
  */
 class parser {
 
@@ -53,17 +55,29 @@ class parser {
         
     }
     
-    
+    /*
+     * @return : FALSE if file doesn't exist
+     * @return : 2 dimensional array on success containing rows and columsn in
+     *           file
+     */
     protected function process_source_file()
     {
+        if(!file_exists($this->relativePathToFile))
+        {
+            return FALSE;
+        }
         try {
             $rows_array = file($this->relativePathToFile);
         } catch (Exception $e) {
-            echo 'Caught exception: ',  $e->getMessage(), "\n";
+            return $e->getMessage();
         }
 
         $i = 0; //counter used for tracking final array index
 
+        /*
+         * two dimensional array used to 
+         * store the data of the file beign parsed
+         */
         $final_array = array();
         foreach($rows_array as $row)
         {
