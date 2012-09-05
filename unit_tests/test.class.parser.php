@@ -25,7 +25,7 @@ class ParserTest extends PHPUnit_Framework_TestCase
         $some_data = array(array('one'),array('two'));
         $myParser = new parser($path);
         
-        $actual = $myPaser->set_parsed_data($some_data);
+        $actual = $myParser->set_parsed_data($some_data);
         
         $expected = NULL;
         
@@ -38,7 +38,7 @@ class ParserTest extends PHPUnit_Framework_TestCase
         $some_data = array(array('one'),array('two'));
         $myParser = new parser($path);
         
-        $myPaser->set_parsed_data($some_data);
+        $myParser->set_parsed_data($some_data);
         
         $expected = NULL;
         $actual = $myParser->get_parsed_data();
