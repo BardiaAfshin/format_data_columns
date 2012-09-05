@@ -35,6 +35,6 @@ class ParserTest extends PHPUnit_Framework_TestCase
 
 }
 
-myTest = new ParserTest();
-myTest->run();
+$myTest = new ParserTest();
+$myTest->run();
 ?>
