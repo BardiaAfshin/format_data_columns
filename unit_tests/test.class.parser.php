@@ -39,16 +39,15 @@ class ParserTest extends PHPUnit_Framework_TestCase
     }
     
     /*
-     * Test case 
+     * Test case - get_source_file()
      * Verify file not found returns FALSE
      */
     function testClassInitializeFileNotFound()
     {
         $path = './some_bogus_file_doesnt_exist.dat';
-        $actual = new parser($path);
-        print_r($actual);
-        $expected = FALSE;
-        $this->assertEquals($expected, $actual);
+        $myParser = new parser($path);
+        $expected = NULL;
+        $this->assertEquals($expected, $myParser->get_source_file());
     }
 
 }
