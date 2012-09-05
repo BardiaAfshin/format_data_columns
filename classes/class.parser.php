@@ -128,7 +128,7 @@ class parser {
     
     public function get_parsed_data()
     {
-        return $this->parsed_data();
+        return $this->parsed_data;
     }
     
 }
