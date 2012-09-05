@@ -40,7 +40,7 @@ class ParserTest extends PHPUnit_Framework_TestCase
         
         $myParser->set_parsed_data($some_data);
         
-        $expected = NULL;
+        $expected = $some_data;
         $actual = $myParser->get_parsed_data();
         
         $this->assertEquals($expected, $actual); //NULL == NULL?
