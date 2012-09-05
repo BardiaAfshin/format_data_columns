@@ -24,7 +24,7 @@ class ParserTest extends PHPUnit_Framework_TestCase
     /*
      * Test Case
      * 1. Initialize parser object
-     * 2. Assert single parameter passed to object passes
+     * 2. Verified file exists as expected from git clone
      */
     function testClassInitialize()
     {
@@ -36,6 +36,18 @@ class ParserTest extends PHPUnit_Framework_TestCase
         
         $this->assertEquals($expected, $actual);
         
+    }
+    
+    /*
+     * Test case 
+     * Verify file not found returns FLASE
+     */
+    function testClassInitializeFileNotFound()
+    {
+        $path = './some_bogus_file_doesnt_exist.dat';
+        $actual = new parser($path);
+        $expected = NULL;
+        $this->assertEquals($expected, $actual);
     }
 
 }
