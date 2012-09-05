@@ -33,6 +33,8 @@ class ParserTest extends PHPUnit_Framework_TestCase
         $actual = $myParser->get_source_file();
         
         $expected = $path;
+        echo "\n expected = $expected";
+        echo "\n actual = $actual";
         
         $this->assertEquals($expected, $actual);
         
