@@ -40,13 +40,13 @@ class ParserTest extends PHPUnit_Framework_TestCase
     
     /*
      * Test case 
-     * Verify file not found returns FLASE
+     * Verify file not found returns FALSE
      */
     function testClassInitializeFileNotFound()
     {
         $path = './some_bogus_file_doesnt_exist.dat';
         $actual = new parser($path);
-        $expected = NULL;
+        $expected = FALSE;
         $this->assertEquals($expected, $actual);
     }
 
