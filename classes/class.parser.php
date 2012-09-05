@@ -46,7 +46,6 @@ class parser {
         
         //load the data into 2 dimensional array
         return $this->process_source_file($this->relativePathToFile);
-        }
     }
     
     /*
