@@ -40,6 +40,7 @@ class parser {
             $this->relativePathToFile = $relativePathToFile;
         }
         else{
+            $this->relativePathToFile = NULL;
             return FALSE;
         }
         
@@ -51,6 +52,7 @@ class parser {
     /*
      * @param relativePathToFile : relative path to file
      * @return relativePathToFile : return path current file
+     * @return NULL if file has not been set
      */
     public function get_source_file()
     {
