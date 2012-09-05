@@ -4,6 +4,10 @@
  * Description of class
  * This class will parse comma delimited files into two dimensional array
  * note: this will replace double space with single space
+ * 
+ * Flow usage:
+ * 1. initaliaze class with comma delimited file
+ * 2. get the parsed data
  *
  * @author Bardia Afshin
  * 
@@ -18,16 +22,16 @@ class parser {
      * relative path to file we are importing
      */
     private $relativePathToFile = NULL;
-    
+    private $parsed_data = array();
     /*
      * @param relativePathToFile : the relative path to file
      * @return : 2 dimesnioal array if object initialzed with success and file exists
-     * @return : FALSE if object not initalized and file doesn't exist
      */
     function __construct($relativePathToFile)
     {
         return $this->set_source_file($relativePathToFile);
     }
+    
     
     /*
      * @param relativePathToFile : relative path to file
@@ -51,7 +55,7 @@ class parser {
         
         
         //load the data into 2 dimensional array
-        return $this->process_source_file($this->relativePathToFile);
+         $this->process_source_file($this->relativePathToFile);
     }
     
     /*
@@ -113,7 +117,18 @@ class parser {
             $i++;
         }
         
+        $this->set_parsed_data($this->parsed_data);
         return $final_array;
+    }
+    
+    public function set_parsed_data($array)
+    {
+        $this->parsed_data = $array;
+    }
+    
+    public function get_parsed_data()
+    {
+        return $this->parsed_data();
     }
     
 }
