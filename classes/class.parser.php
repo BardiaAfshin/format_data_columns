@@ -36,6 +36,11 @@ class parser {
      */
     public function set_source_file($relativePathToFile)
     {
+        $this->relativePathToFile = $relativePathToFile;
+        
+        /*
+         * taking the setter one step further
+         */
         if($this->check_file_exists()){
             $this->relativePathToFile = $relativePathToFile;
         }
@@ -56,7 +61,6 @@ class parser {
      */
     public function get_source_file()
     {
-        echo "\n get source file = ".$this->relativePathToFile;
         return $this->relativePathToFile;
     }
     
