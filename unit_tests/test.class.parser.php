@@ -16,8 +16,15 @@ require_once('../classes/class.parser.php');
 class ParserTest extends PHPUnit_Framework_TestCase
 {
 
-    function testThatItWorks() {
-        self::assertTrue(true);
+    /*
+     * te
+     */
+    function test_set_parsed_data()
+    {
+    }
+    
+    function tet_get_parsed_data()
+    {
     }
     
     
