@@ -46,6 +46,7 @@ class ParserTest extends PHPUnit_Framework_TestCase
     {
         $path = './some_bogus_file_doesnt_exist.dat';
         $actual = new parser($path);
+        print_r($actual);
         $expected = FALSE;
         $this->assertEquals($expected, $actual);
     }
