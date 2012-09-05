@@ -14,3 +14,5 @@ echo $returned_data[0][3];
 echo "\t";
 
 echo $returned_data[0][5];
+
+echo "\n";
