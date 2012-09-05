@@ -1,7 +1,7 @@
 <?php
 
 require_once('/usr/share/php/PHPUnit/Autoload.php');
-require_cone('../classes/class.parser.php');
+require_once('../classes/class.parser.php');
 
 /*
  * To change this template, choose Tools | Templates
@@ -29,6 +29,7 @@ class ParserTest extends PHPUnit_Framework_TestCase
     function testClassInitialize()
     {
         $myParser = new parser('./data/w_data.dat');
+        $myParser->get_source_file();
         
     }
 
