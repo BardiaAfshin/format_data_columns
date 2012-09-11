@@ -27,14 +27,14 @@ class sort {
 	 */
 	private function set_to_sort($array)
 	{
-        if($this->to_sort = $array)
-        {
-            return TRUE;
-        }
-        else
-        {
-            return FALSE;
-        }
+	        if($this->to_sort = $array)
+	        {
+	            return TRUE;
+	        }
+	        else
+	        {
+	            return FALSE;
+	        }
 	}
 	
 	/*
@@ -76,15 +76,15 @@ class sort {
 		 */
 		if(array_multisort($keys, $values) == TRUE)
 		{
-				/*
-				 * merge 2 arrays back together as a single
-				 * associative array
-				 */
-				foreach($keys as $key)
-				{
-					$return[$key] = $values[$i];
-				}
-				return $return;
+		/*
+		 * merge 2 arrays back together as a single
+		 * associative array
+		 */
+		foreach($keys as $key)
+		{
+			$return[$key] = $values[$i];
+		}
+		return $return;
 		}
 		else{
 			return FALSE;
