@@ -8,7 +8,7 @@
  * 1. create interface for this class
  */
 
-class sort {
+class sorter {
 
 	protected $to_sort = NULL;
 
