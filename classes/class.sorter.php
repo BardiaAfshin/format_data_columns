@@ -47,7 +47,13 @@ class sort {
 		return $this->to_sort;
 	
 	}
-	
+
+	/*
+	 * @func : sort the associative array
+	 * @param : none
+	 * @return: sorted array
+	 * @return: FALSE if failed to sort array
+	 */
 	public function sort_my_array()
 	{
 		return $this->sort_array($this->get_to_sort());
