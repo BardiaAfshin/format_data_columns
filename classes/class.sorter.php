@@ -14,9 +14,12 @@ class sorter {
 
 	/*
 	 * constructor for class
+	 * @param : array - associative array to be sorted
+	 * @return : TRUE
 	 */
-	function __construct(){
-	
+	function __construct($array){
+		$this->set_to_sort($array); //do this now
+		return TRUE;
 	}
 	
 	/*
