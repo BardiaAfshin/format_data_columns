@@ -48,6 +48,11 @@ class sort {
 	
 	}
 	
+	public function sort_my_array()
+	{
+		return $this->sort_array($this->get_to_sort());
+	}
+	
 	/*
 	 * @func : sort the associative array
 	 * @param : array key value pair to sort
